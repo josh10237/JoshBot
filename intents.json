@@ -4,7 +4,7 @@
     "responses": ["?", "What?", "Wdym"]
     },
     {"tag": "greeting",
-    "patterns": ["Hi", "Hey", "Yo", "Sup", "Whats up", "Hello", "Whattup", "Howdy"],
+    "patterns": ["Hi", "Hey", "Yo", "Sup", "Hello", "Whattup", "Howdy", "Heyo"],
     "responses": ["Hey", "What's Up", "Hi"]
     },
     {"tag": "goodbye",
@@ -15,8 +15,12 @@
     "patterns": ["Thanks", "Thank you", "That's helpful", "Cheers"],
     "responses": ["Happy to help!", "Any time!", "Of course :)"]
     },
+    {"tag": "affirmation",
+    "patterns": ["Sounds good", "perfect", "great!", "See you there!", "That works", "Sounds good"],
+    "responses": ["\uD83D\uDC4D", "Sounds good :)", "nice"]
+    },
     {"tag": "inquiry-pleasantry",
-    "patterns": ["How are you?", "How are you doing?"],
+    "patterns": ["How are you?", "How are you doing?", "Whats up?"],
     "responses": ["I'm good wbu", "Im doing well how about you?", "good hbu"]
     },
     {"tag": "inquiry-day",
@@ -31,10 +35,6 @@
     "patterns": ["Congats on Berkeley", "Goodluck in M.E.T", "Congraduations", "Good job", "We are proud of you" ],
     "responses": ["Thanks!", "Thank you!", "Thx :)"]
     },
-    {"tag": "affirmation",
-    "patterns": ["Sounds good", "perfect", "great!", "See you there!", "That works", "Sounds good"],
-    "responses": [" \uD83D\uDC4D", "Sounds good :)", "nice"]
-    },
     {"tag": "inquiry-bot",
     "patterns": ["Are you a robot?", "Is this a bot?", "Is this your NLP bot?"],
     "responses": ["No its me haha", "Lol no, a bot isn't this good", "Lmao nope haha"]
@@ -46,6 +46,46 @@
     {"tag": "inquiry-age",
     "patterns": ["How old are you?", "What is your age?", "Are you legal?"],
     "responses": ["I'm 18", "Lol, Im 18", "18 years old"]
+    },
+    {"tag": "love",
+    "patterns": ["i love you", "ily", "Love u", "I lobe you"],
+    "responses": ["I love you too", "I love you ❤️", "I love you more"]
+    },
+    {"tag": "inquiry-clothes",
+    "patterns": ["What should I wear?", "jeans and a sweater ok?", "Is it fancy?"],
+    "responses": ["You can wear anything you like \uD83D\uDE0A", "Anything is fine \uD83D\uDE0A"]
+    },
+    {"tag": "inquiry-awake",
+    "patterns": ["U up?", "Are you awake?", "Are you still up?"],
+    "responses": ["yea", "Yeah whats up?"]
+    },
+    {"tag": "check-snap",
+    "patterns": ["check snap", "move to snap", "snapchat"],
+    "responses": ["Ok", "Okie"]
+    },
+    {"tag": "inquiry-call",
+    "patterns": ["Can we call?", "Can I call you?", "Can we ft?", "Facetime?"],
+    "responses": ["I'm 18", "Lol, Im 18", "18 years old"]
+    },
+    {"tag": "lol",
+    "patterns": ["Lol", "Lmao", "Haha", "hahahahahah", "\uD83D\uDE02"],
+    "responses": ["\uD83D\uDE02 \uD83D\uDE02 \uD83D\uDE02", "Lmaooo", "Hahahaha"]
+    },
+    {"tag": "I-statement",
+    "patterns": ["I am good", "I am well", "I made breakfast", "I like this", "I am 18", "I am a god", "I"],
+    "responses": ["Cool", "Nice \uD83D\uDE06", "Awesome :)"]
+    },
+    {"tag": "time",
+    "patterns": ["1 am", "1 o'clock", "3 pm", "2:00", "4:30"],
+    "responses": ["Sounds good \uD83D\uDC4D", "I'll lyk"]
+    },
+    {"tag": "inquiry-videogame",
+    "patterns": ["Want to play minecraft?", "Boys are hoppin on the craft", "Overwatch", "Fortnite", "Warzone", "Hop in a game?"],
+    "responses": ["Down \uD83D\uDC4D", "Sounds dope, im down"]
+    },
+    {"tag": "inquiry-confirmation",
+    "patterns": ["Are you sure?", "Really?", "Positive?", "Only if you want to"],
+    "responses": ["Yes", "Yes ofc"]
     }
   ]
 }

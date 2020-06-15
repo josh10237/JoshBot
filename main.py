@@ -82,7 +82,7 @@ try:
     josh.py
     model.load("model.tflearn")
 except:
-    model.fit(training, output, n_epoch=5000, batch_size=20, show_metric=True)
+    model.fit(training, output, n_epoch=10000, batch_size=32, show_metric=True)
     model.save("model.tflearn")
 
 
@@ -110,7 +110,7 @@ def chat():
         results = model.predict([bag_of_words(inp, words)])
         results_index = numpy.argmax(results)
         tag = labels[results_index]
-        if results[0][results_index] < 0.5:
+        if results[0][results_index] < 0.33:
             print("Closest tag: " + str(tag))
             tag = "confused"
         print("Tag: " + str(tag) + "  Confidence: " + str(results[0][results_index]))
