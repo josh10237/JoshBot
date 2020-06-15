@@ -12,6 +12,7 @@ import pickle
 
 with open("intents.json") as file:
     data = json.load(file)
+    print(data)
 
 try:
     with open("data.pickle", "rb") as f:
@@ -69,17 +70,18 @@ except:
 tensorflow.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(training[0])])
-net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 12)
+net = tflearn.fully_connected(net, 12)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
 model = tflearn.DNN(net)
 
 try:
+    josh.py
     model.load("model.tflearn")
 except:
-    model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+    model.fit(training, output, n_epoch=1000, batch_size=12, show_metric=True)
     model.save("model.tflearn")
 
 
@@ -107,15 +109,14 @@ def chat():
         results = model.predict([bag_of_words(inp, words)])
         results_index = numpy.argmax(results)
         tag = labels[results_index]
+        if results[0][results_index] < 0.7:
+            tag = "confused"
         print("Tag: " + str(tag))
 
-        if results[results_index] > 0.7:
-            for tg in data["intents"]:
-                if tg['tag'] == tag:
-                    responses = tg['responses']
-            print(random.choice(responses))
-        else:
-            print("I did'nt get that")
+        for tg in data["intents"]:
+            if tg['tag'] == tag:
+                responses = tg['responses']
+        print(random.choice(responses))
 
 
 chat()

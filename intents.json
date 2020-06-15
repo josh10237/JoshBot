@@ -1,4 +1,7 @@
 {"intents": [
+        {"tag": "confused",
+         "responses": ["?", "What?", "Wdym"]
+        },
         {"tag": "greeting",
          "patterns": ["Hi", "How are you", "Hey", "Yo", "Sup", "Whats up", "Hello", "Whattup", "Howdy"],
          "responses": ["Hey", "What's Up", "Hi"]
@@ -11,7 +14,15 @@
          "patterns": ["Thanks", "Thank you", "That's helpful", "Cheers"],
          "responses": ["Happy to help!", "Any time!", "Of course :)"]
         },
-        {"tag": "hangout",
+        {"tag": "inquiry-pleasantry",
+         "patterns": ["How are you?", "How are you doing?"],
+         "responses": ["I'm good wbu", "Im doing well how about you?", "good hbu"]
+        },
+        {"tag": "inquiry-day",
+         "patterns": ["How was your day?", "What did you do today?"],
+         "responses": ["My day was good", "I had work today", "I worked on the NLP bot"]
+        },
+        {"tag": "inquiry-hangout",
          "patterns": ["You free today?", "Hangout later?", "Do you want to hang?", "Can you hang?", "Want to do something?","Want to do someething this weekend?"],
          "responses": ["Yea, what do you want to do?", "Sure, when?", "When do you want to?"]
         },
@@ -22,6 +33,18 @@
         {"tag": "affirmation",
          "patterns": ["Sounds good", "perfect", "great!", "See you there!", "That works", "Sounds good"],
          "responses": [" \uD83D\uDC4D", "Sounds good :)", "nice"]
+        },
+        {"tag": "inquiry-bot",
+         "patterns": ["Are you a robot?", "Is this a bot?", "Is this your NLP bot?"],
+         "responses": ["No its me haha", "Lol no, a bot isn't this good", "Lmao nope haha"]
+        },
+        {"tag": "inquiry-NLP",
+         "patterns": ["What is NLP?", "What does NLP stand for?", "Natural Language Processing"],
+         "responses": ["NLP stands for Natural Language Processing", "It's a type of AI", "NLP = Natural Language Processing"]
+        },
+        {"tag": "inquiry-age",
+         "patterns": ["How old are you?", "What is your age?", "Are you legal?"],
+         "responses": ["I'm 18", "Lol, Im 18", "18 years old"]
         }
-   ]
+  ]
 }
