@@ -12,13 +12,16 @@ import pickle
 
 with open("intents.json") as file:
     data = json.load(file)
-    print(data)
 
-try:
-    josh.py
-    with open("data.pickle", "rb") as f:
-        words, labels, training, output = pickle.load(f)
-except:
+
+def use_model():
+    try:
+        with open("data.pickle", "rb") as f:
+            words, labels, training, output = pickle.load(f)
+    except:
+        create_model()
+
+def create_model():
     words = []
     labels = []
     docs_x = []
@@ -78,11 +81,13 @@ net = tflearn.regression(net)
 
 model = tflearn.DNN(net)
 
-try:
-    josh.py
-    model.load("model.tflearn")
-except:
-    model.fit(training, output, n_epoch=10000, batch_size=32, show_metric=True)
+def use_trained():
+    try:
+        model.load("model.tflearn")
+    except:
+        retrain(5000, 32)
+def retrain(epoch, batch):
+    model.fit(training, output, n_epoch=epoch, batch_size=batch, show_metric=True)
     model.save("model.tflearn")
 
 
